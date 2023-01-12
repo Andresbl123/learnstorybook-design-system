@@ -1,36 +1,23 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Button = Button;
-
 var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutProperties"));
-
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/taggedTemplateLiteral"));
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-
 var _polished = require("polished");
-
 var _styles = require("./shared/styles");
-
 var _animation = require("./shared/animation");
-
+var _excluded = ["containsIcon", "isLoading", "isUnclickable"],
+  _excluded2 = ["isDisabled", "isLoading", "loadingText", "isLink", "children", "ButtonWrapper"];
 var _templateObject, _templateObject2, _templateObject3;
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var Text = _styledComponents.default.span(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2.default)(["\n  display: inline-block;\n  vertical-align: top;\n"])));
-
 var Loading = _styledComponents.default.span(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2.default)(["\n  position: absolute;\n  top: 50%;\n  left: 0;\n  right: 0;\n  opacity: 0;\n"])));
-
 var APPEARANCES = {
   PRIMARY: 'primary',
   PRIMARY_OUTLINE: 'primaryOutline',
@@ -43,7 +30,6 @@ var SIZES = {
   SMALL: 'small',
   MEDIUM: 'medium'
 };
-
 var StyledButton = _styledComponents.default.button(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2.default)(["\n  border: 0;\n  font-size:20px;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  overflow: hidden;\n  padding: ", ";\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  transition: all 150ms ease-out;\n  transform: translate3d(0,0,0);\n  vertical-align: top;\n  white-space: nowrap;\n  user-select: none;\n  opacity: 1;\n  margin: 0;\n  background: transparent;\n\n\n  font-size: ", "px;\n  font-weight: ", ";\n  line-height: 1;\n\n  ", "\n\n  ", " {\n    transform: scale3d(1,1,1) translate3d(0,0,0);\n    transition: transform 700ms ", ";\n    opacity: 1;\n  }\n\n  ", " {\n    transform: translate3d(0, 100%, 0);\n  }\n\n  svg {\n    height: ", "px;\n    width: ", "px;\n    vertical-align: top;\n    margin-right: ", "px;\n    margin-top: ", "px;\n    margin-bottom: ", "px;\n\n    /* Necessary for js mouse events to not glitch out when hovering on svgs */\n    pointer-events: none;\n  }\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", ";\n\n    ", ";\n\n    ", ";\n\n"])), function (props) {
   return props.size === SIZES.SMALL ? '8px 16px' : '13px 20px';
 }, function (props) {
@@ -81,48 +67,39 @@ var StyledButton = _styledComponents.default.button(_templateObject3 || (_templa
 }, function (props) {
   return props.appearance === APPEARANCES.SECONDARY_OUTLINE && "\n        box-shadow: ".concat(_styles.color.secondary, " 0 0 0 1px inset;\n        color: ").concat(_styles.color.secondary, ";\n\n        &:hover {\n          box-shadow: ").concat(_styles.color.secondary, " 0 0 0 1px inset;\n          background: transparent;\n        }\n\n        &:active {\n          background: ").concat(_styles.color.secondary, ";\n          box-shadow: ").concat(_styles.color.secondary, " 0 0 0 1px inset;\n          color: ").concat(_styles.color.lightest, ";\n        }\n        &:focus {\n          box-shadow: ").concat(_styles.color.secondary, " 0 0 0 1px inset,\n            ").concat((0, _polished.rgba)(_styles.color.secondary, 0.4), " 0 1px 9px 2px;\n        }\n        &:focus:hover {\n          box-shadow: ").concat(_styles.color.secondary, " 0 0 0 1px inset,\n            ").concat((0, _polished.rgba)(_styles.color.secondary, 0.2), " 0 8px 18px 0px;\n        }\n      ");
 });
-
 var ButtonLink = StyledButton.withComponent('a');
-
 var applyStyle = function applyStyle(ButtonWrapper) {
   return ButtonWrapper && StyledButton.withComponent(function (_ref) {
     var containsIcon = _ref.containsIcon,
-        isLoading = _ref.isLoading,
-        isUnclickable = _ref.isUnclickable,
-        rest = (0, _objectWithoutProperties2.default)(_ref, ["containsIcon", "isLoading", "isUnclickable"]);
+      isLoading = _ref.isLoading,
+      isUnclickable = _ref.isUnclickable,
+      rest = (0, _objectWithoutProperties2.default)(_ref, _excluded);
     return /*#__PURE__*/_react.default.createElement(ButtonWrapper, rest);
   });
 };
-
 function Button(_ref2) {
   var isDisabled = _ref2.isDisabled,
-      isLoading = _ref2.isLoading,
-      loadingText = _ref2.loadingText,
-      isLink = _ref2.isLink,
-      children = _ref2.children,
-      ButtonWrapper = _ref2.ButtonWrapper,
-      props = (0, _objectWithoutProperties2.default)(_ref2, ["isDisabled", "isLoading", "loadingText", "isLink", "children", "ButtonWrapper"]);
-
+    isLoading = _ref2.isLoading,
+    loadingText = _ref2.loadingText,
+    isLink = _ref2.isLink,
+    children = _ref2.children,
+    ButtonWrapper = _ref2.ButtonWrapper,
+    props = (0, _objectWithoutProperties2.default)(_ref2, _excluded2);
   var buttonInner = /*#__PURE__*/_react.default.createElement(_react.Fragment, null, /*#__PURE__*/_react.default.createElement(Text, null, children), isLoading && /*#__PURE__*/_react.default.createElement(Loading, null, loadingText || 'Loading...'));
-
   var StyledButtonWrapper = _react.default.useMemo(function () {
     return applyStyle(ButtonWrapper);
   }, [ButtonWrapper]);
-
   var SelectedButton = StyledButton;
-
   if (ButtonWrapper) {
     SelectedButton = StyledButtonWrapper;
   } else if (isLink) {
     SelectedButton = ButtonLink;
   }
-
   return /*#__PURE__*/_react.default.createElement(SelectedButton, Object.assign({
     isLoading: isLoading,
     disabled: isDisabled
   }, props), buttonInner);
 }
-
 Button.defaultProps = {
   isLoading: false,
   loadingText: null,

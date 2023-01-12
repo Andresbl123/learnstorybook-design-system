@@ -1,40 +1,25 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.AnchorWrapper = exports.buttonWrapper = exports.AllButtons = exports.WithInteractions = exports.default = void 0;
-
+exports.default = exports.buttonWrapper = exports.WithInteractions = exports.AnchorWrapper = exports.AllButtons = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
-
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/asyncToGenerator"));
-
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/taggedTemplateLiteral"));
-
 var _react = _interopRequireDefault(require("react"));
-
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-
 var _Button = require("./Button");
-
 var _Icon = require("./Icon");
-
 var _StoryLinkWrapper = require("./StoryLinkWrapper");
-
 var _testingLibrary = require("@storybook/testing-library");
-
 var _jest = require("@storybook/jest");
-
 var _templateObject;
-
 var CustomButton = _styledComponents.default.button(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2.default)(["\n  border: 1px solid green;\n  background: lightgreen;\n  color: rebeccapurple;\n  padding: 1em;\n  font-size: 1.2em;\n"])));
-
 function ButtonWrapper(props) {
   return /*#__PURE__*/_react.default.createElement(CustomButton, props);
 }
-
 var _default = {
   title: 'Design System/Button',
   component: _Button.Button
@@ -44,13 +29,10 @@ var _default = {
  * See https://storybook.js.org/docs/react/writing-stories/play-function
  * to learn more about the play function.
  */
-
 exports.default = _default;
-
 var WithInteractions = function WithInteractions(args) {
   return /*#__PURE__*/_react.default.createElement(_Button.Button, args);
 };
-
 exports.WithInteractions = WithInteractions;
 WithInteractions.args = {
   appearance: 'primary',
@@ -58,36 +40,29 @@ WithInteractions.args = {
   ButtonWrapper: _StoryLinkWrapper.StoryLinkWrapper,
   children: 'Button'
 };
-
 WithInteractions.play = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(_ref) {
     var canvasElement, canvas;
     return _regenerator.default.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            canvasElement = _ref.canvasElement;
-            // Assigns canvas to the component root element
-            canvas = (0, _testingLibrary.within)(canvasElement);
-            _context.next = 4;
-            return _testingLibrary.userEvent.click(canvas.getByRole('link'));
-
-          case 4:
-            (0, _jest.expect)(canvas.getByRole('link')).toHaveAttribute('href', 'http://storybook.js.org');
-
-          case 5:
-          case "end":
-            return _context.stop();
-        }
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          canvasElement = _ref.canvasElement;
+          // Assigns canvas to the component root element
+          canvas = (0, _testingLibrary.within)(canvasElement);
+          _context.next = 4;
+          return _testingLibrary.userEvent.click(canvas.getByRole('link'));
+        case 4:
+          (0, _jest.expect)(canvas.getByRole('link')).toHaveAttribute('href', 'http://storybook.js.org');
+        case 5:
+        case "end":
+          return _context.stop();
       }
     }, _callee);
   }));
-
   return function (_x) {
     return _ref2.apply(this, arguments);
   };
 }();
-
 var AllButtons = function AllButtons(args) {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.Button, {
     appearance: "primary"
@@ -150,10 +125,8 @@ var AllButtons = function AllButtons(args) {
     icon: "link"
   }), "Link"));
 };
-
 exports.AllButtons = AllButtons;
 AllButtons.storyName = 'all buttons';
-
 var buttonWrapper = function buttonWrapper(args) {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(ButtonWrapper, null, "Original Button Wrapper"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_Button.Button, {
     ButtonWrapper: ButtonWrapper,
@@ -235,10 +208,8 @@ var buttonWrapper = function buttonWrapper(args) {
     icon: "link"
   }), "Link"));
 };
-
 exports.buttonWrapper = buttonWrapper;
 buttonWrapper.storyName = 'button wrapper';
-
 var AnchorWrapper = function AnchorWrapper(args) {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_StoryLinkWrapper.StoryLinkWrapper, {
     to: "http://storybook.js.org"
@@ -341,6 +312,5 @@ var AnchorWrapper = function AnchorWrapper(args) {
     icon: "link"
   }), "Link"));
 };
-
 exports.AnchorWrapper = AnchorWrapper;
 AnchorWrapper.storyName = 'anchor wrapper';

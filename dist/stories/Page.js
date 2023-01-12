@@ -1,26 +1,19 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Page = void 0;
-
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/slicedToArray"));
-
 var _react = _interopRequireDefault(require("react"));
-
 var _Header = require("./Header");
-
 require("./page.css");
-
 var Page = function Page() {
   var _React$useState = _react.default.useState(),
-      _React$useState2 = (0, _slicedToArray2.default)(_React$useState, 2),
-      user = _React$useState2[0],
-      setUser = _React$useState2[1];
-
+    _React$useState2 = (0, _slicedToArray2.default)(_React$useState, 2),
+    user = _React$useState2[0],
+    setUser = _React$useState2[1];
   return /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_Header.Header, {
     user: user,
     onLogin: function onLogin() {
@@ -66,5 +59,4 @@ var Page = function Page() {
     fill: "#999"
   }))), "Viewports addon in the toolbar")));
 };
-
 exports.Page = Page;

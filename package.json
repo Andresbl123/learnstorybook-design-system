@@ -1,11 +1,12 @@
 {
-  "name": "learnstorybook-design-system-template",
+  "name": "@andres12/learnstorybook-design-system-template",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "auto": "^10.37.6",
     "polished": "^4.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -83,11 +84,20 @@
     "jest": "27",
     "prettier": "^2.8.2"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "learnstorybook-design-system-template@0.1.0",
   "description": "Contiene el tutorial sobre la creación de sistemas de diseño con react y storybook",
   "main": "index.js",
-  "repository": "https://github.com/Andresbl123/learnstorybook-design-system.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andresbl123/learnstorybook-design-system.git"
+  },
   "author": "Carlos Andrés Babativa Linares <carlos3k11@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andresbl123/learnstorybook-design-system/issues"
+  },
+  "homepage": "https://github.com/Andresbl123/learnstorybook-design-system#readme",
+  "keywords": [
+    "storybook",
+    "tutorial"
+  ]
 }

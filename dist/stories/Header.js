@@ -1,23 +1,18 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Header = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _Button = require("./Button");
-
 require("./header.css");
-
 var Header = function Header(_ref) {
   var user = _ref.user,
-      onLogin = _ref.onLogin,
-      onLogout = _ref.onLogout,
-      onCreateAccount = _ref.onCreateAccount;
+    onLogin = _ref.onLogin,
+    onLogout = _ref.onLogout,
+    onCreateAccount = _ref.onCreateAccount;
   return /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("svg", {
@@ -54,7 +49,6 @@ var Header = function Header(_ref) {
     label: "Sign up"
   })))));
 };
-
 exports.Header = Header;
 Header.defaultProps = {
   user: null

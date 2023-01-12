@@ -1,18 +1,13 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.pageMargins = exports.pageMargin = exports.breakpoint = exports.typography = exports.spacing = exports.color = exports.background = void 0;
-
+exports.typography = exports.spacing = exports.pageMargins = exports.pageMargin = exports.color = exports.breakpoint = exports.background = void 0;
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/taggedTemplateLiteral"));
-
 var _styledComponents = require("styled-components");
-
 var _templateObject;
-
 // Global style variables
 var background = {
   app: '#F6F9FC',

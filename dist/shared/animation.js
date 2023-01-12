@@ -1,20 +1,14 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.inlineGlow = exports.shake = exports.jiggle = exports.float = exports.glow = exports.rotate360 = exports.easing = void 0;
-
+exports.shake = exports.rotate360 = exports.jiggle = exports.inlineGlow = exports.glow = exports.float = exports.easing = void 0;
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/taggedTemplateLiteral"));
-
 var _styledComponents = require("styled-components");
-
 var _styles = require("./styles");
-
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
-
 var easing = {
   rubber: 'cubic-bezier(0.175, 0.885, 0.335, 1.05)'
 };

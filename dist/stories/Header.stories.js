@@ -1,16 +1,12 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.LoggedOut = exports.LoggedIn = exports.default = void 0;
-
+exports.default = exports.LoggedOut = exports.LoggedIn = void 0;
 var _react = _interopRequireDefault(require("react"));
-
 var _Header = require("./Header");
-
 var _default = {
   title: 'Example/Header',
   component: _Header.Header,
@@ -20,11 +16,9 @@ var _default = {
   }
 };
 exports.default = _default;
-
 var Template = function Template(args) {
   return /*#__PURE__*/_react.default.createElement(_Header.Header, args);
 };
-
 var LoggedIn = Template.bind({});
 exports.LoggedIn = LoggedIn;
 LoggedIn.args = {

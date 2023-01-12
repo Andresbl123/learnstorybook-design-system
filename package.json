@@ -1,11 +1,12 @@
 {
-  "name": "learnstorybook-design-system-template",
+  "name": "@andres12/learnstorybook-design-system-template",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "auto": "^10.37.6",
     "polished": "^4.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -15,12 +16,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook-docs": "build-storybook  --docs",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token=ff90cc5ea979"
+    "chromatic": "npx chromatic --project-token=ff90cc5ea979",
+    "test-storybook": "test-storybook"
   },
   "eslintConfig": {
     "extends": [
@@ -38,7 +41,16 @@
       }
     ]
   },
-  "babel": {},
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -52,20 +64,40 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
     "@babel/preset-typescript": "^7.18.6",
+    "@storybook/addon-a11y": "^6.5.15",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
     "@storybook/addon-links": "^6.5.15",
     "@storybook/builder-webpack4": "^6.5.15",
+    "@storybook/jest": "^0.0.10",
     "@storybook/manager-webpack4": "^6.5.15",
     "@storybook/node-logger": "^6.5.15",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.5.15",
+    "@storybook/test-runner": "^0.9.2",
     "@storybook/testing-library": "^0.0.13",
     "chromatic": "^6.14.0",
+    "cross-env": "^7.0.3",
+    "jest": "27",
     "prettier": "^2.8.2"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "learnstorybook-design-system-template@0.1.0"
+  "description": "Contiene el tutorial sobre la creación de sistemas de diseño con react y storybook",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andresbl123/learnstorybook-design-system.git"
+  },
+  "author": "Carlos Andrés Babativa Linares <carlos3k11@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andresbl123/learnstorybook-design-system/issues"
+  },
+  "homepage": "https://github.com/Andresbl123/learnstorybook-design-system#readme",
+  "keywords": [
+    "storybook",
+    "tutorial"
+  ]
 }
